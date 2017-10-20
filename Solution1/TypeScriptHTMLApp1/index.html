@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      ng-app="app"
+      ng-strict-di>
+<head>
+    <meta charset="utf-8" />
+    <title>Admin</title>
+    
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <!-- Saját -->
+    <link href="css/app.css" rel="stylesheet" />
+</head>
+<body ng-controller="Controller1 as ctrl">
+    <div class="pageContainer">
+        <div class="header">
+            <div class="headerMenuIcon" ng-click="ctrl.menuClicked();">
+                <span class="glyphicon glyphicon-menu-hamburger"></span>
+            </div>
+            <div class="headerText">
+                {{ctrl.hello}}
+            </div>
+            <div class="headerUserContainer">
+                <span>
+                    Felhasználó neve
+                </span>
+                <span class="glyphicon glyphicon-menu-down"></span>
+            </div>
+        </div>
+        <div class="menu animate-if"
+             ng-if="ctrl.menuVisible">
+            <div class="menu__item">
+                Menü1
+            </div>
+            <div class="menu__item">
+                Menü2
+            </div>
+            <div class="menu__item">
+                Menü3
+            </div>
+            <div class="menu__item">
+                Menü4
+            </div>
+        </div>
+    </div>
+    <!-- Libek -->
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/angular-animate.js"></script>
+    <script src="scripts/jquery-3.2.1.js"></script>
+    <script src="scripts/popper.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+
+
+    <script src="app/file1.js"></script>
+    <script src="app/app.js"></script>
+</body>
+</html>
