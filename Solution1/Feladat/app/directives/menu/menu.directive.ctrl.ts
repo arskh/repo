@@ -9,10 +9,10 @@
             private $http: ng.IHttpService
         ) {
             this.menus = [];
-            this.menuVisible = true;
+            this.menuVisible = false;
 
-            this.$http.get("../data/menu.json").then((data: ng.IHttpResponse<ResponseDataType<Array<MenuGroupDto>>>) => {
-                data.data.data.map((item: MenuGroupDto) => {
+            this.$http.get("../data/menu.json").then((data: ng.IHttpResponse<Array<MenuGroupDto>>) => {
+                data.data.map((item: MenuGroupDto) => {
                     this.menus.push(new MenuGroupDto(item));
                 });
             });

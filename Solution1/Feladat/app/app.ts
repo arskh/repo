@@ -5,23 +5,24 @@
     const $http = initInjector.get("$http");
 
     angular.module("app")
+        .service("UserService", UserService)
         .directive("headerDirective", headerDirective)
         .directive("menuDirective", menuDirective)
+        .directive("pagerDirective", pagerDirective)
         .controller("MainController", MainController)
-        .controller("Controller2", Controller2)
-        .controller("HomeController", HomeController);
+        .controller("Controller2", Controller2);
 
     angular.module("app").config(['$routeProvider', ($routeProvider) => {
         $routeProvider
-            .when("/Book/:bookId", {
-                templateUrl: "../views/book.html",
-                controller: Controller2,
-                controllerAs: "ctrl"
+            .when("/Users", {
+                templateUrl: "app/admin/userList.html",
+                controller: UserListController,
+                controllerAs: "uCtrl"
             })
-            .when("/Home", {
-                templateUrl: "../views/home.html",
+            .otherwise("/Home", {
+                templateUrl: "app/home/home.html",
                 controller: HomeController,
-                controllerAs: "ctrl"
+                controllerAs: "homeCtrl"
             })
     }])
 

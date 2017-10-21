@@ -1,6 +1,10 @@
 ﻿{
     "data": {
-        "userName": "Felhasználó.név1",
-        "picturePath": "/content/profilepicture.png"
+        "id": "1",
+        "userName": "Admin",
+        "picturePath": "/content/profilepicture.png",
+        "email": "admin@email.com",
+        "countryId": "1",
+        "description": ""
     }
 }

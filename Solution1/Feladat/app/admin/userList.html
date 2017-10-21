@@ -1,0 +1,81 @@
+﻿<div class="row">
+    <div class="col-xs-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr class="table__header">
+                    <th ng-click="uCtrl.order('id');"
+                        class="pointered">
+                        <div class="thSortable">
+                            <span class="thSortable__label">Id</span>
+                            <div class="thSortable__icon">
+                                <div class="glyphicon glyphicon-chevron-up"
+                                     ng-class="{'thSortable__icon--active' : uCtrl.userService.searchDto.orderDirection && uCtrl.userService.searchDto.orderBy === 'id'}"></div>
+                                <div class="glyphicon glyphicon-chevron-down"
+                                     ng-class="{'thSortable__icon--active' : !uCtrl.userService.searchDto.orderDirection && uCtrl.userService.searchDto.orderBy === 'id'}"></div>
+                            </div>
+                        </div>
+                    </th>
+                    <th ng-click="uCtrl.order('userName');"
+                        class="pointered">
+                        <div class="thSortable">
+                            <span class="thSortable__label">Felhasználónév</span>
+                            <div class="thSortable__icon">
+                                <div class="glyphicon glyphicon-chevron-up"
+                                     ng-class="{'thSortable__icon--active' : uCtrl.userService.searchDto.orderDirection && uCtrl.userService.searchDto.orderBy === 'userName'}"></div>
+                                <div class="glyphicon glyphicon-chevron-down"
+                                     ng-class="{'thSortable__icon--active' : !uCtrl.userService.searchDto.orderDirection && uCtrl.userService.searchDto.orderBy === 'userName'}"></div>
+                            </div>
+                        </div>
+                    </th>
+                    <th ng-click="uCtrl.order('email');"
+                        class="pointered">
+                        <div class="thSortable">
+                            <span class="thSortable__label">E-mail</span>
+                            <div class="thSortable__icon">
+                                <div class="glyphicon glyphicon-chevron-up"
+                                     ng-class="{'thSortable__icon--active' : uCtrl.userService.searchDto.orderDirection && uCtrl.userService.searchDto.orderBy === 'email'}"></div>
+                                <div class="glyphicon glyphicon-chevron-down"
+                                     ng-class="{'thSortable__icon--active' : !uCtrl.userService.searchDto.orderDirection && uCtrl.userService.searchDto.orderBy === 'email'}"></div>
+                            </div>
+                        </div>
+                    </th>
+                    <th ng-click="uCtrl.order('countryId');"
+                        class="pointered">
+                        <div class="thSortable">
+                            <span class="thSortable__label">Ország</span>
+                            <div class="thSortable__icon">
+                                <div class="glyphicon glyphicon-chevron-up"
+                                     ng-class="{'thSortable__icon--active' : uCtrl.userService.searchDto.orderDirection && uCtrl.userService.searchDto.orderBy === 'countryId'}"></div>
+                                <div class="glyphicon glyphicon-chevron-down"
+                                     ng-class="{'thSortable__icon--active' : !uCtrl.userService.searchDto.orderDirection && uCtrl.userService.searchDto.orderBy === 'countryId'}"></div>
+                            </div>
+                        </div>
+                    </th>
+                    <th ng-click="uCtrl.order('description');"
+                        class="pointered">
+                        <div class="thSortable">
+                            <span class="thSortable__label">Bemutatkozás</span>
+                            <div class="thSortable__icon">
+                                <div class="glyphicon glyphicon-chevron-up"
+                                     ng-class="{'thSortable__icon--active' : uCtrl.userService.searchDto.orderDirection && uCtrl.userService.searchDto.orderBy === 'description'}"></div>
+                                <div class="glyphicon glyphicon-chevron-down"
+                                     ng-class="{'thSortable__icon--active' : !uCtrl.userService.searchDto.orderDirection && uCtrl.userService.searchDto.orderBy === 'description'}"></div>
+                            </div>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="user in uCtrl.userList">
+                    <td ng-bind="::user.id"></td>
+                    <td ng-bind="::user.userName"></td>
+                    <td ng-bind="::user.email"></td>
+                    <td ng-bind="::user.countryId"></td>
+                    <td ng-bind="::user.description"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <pager-directive search-function="uCtrl.search();"
+                     ng-if="uCtrl.userList.length > 0"></pager-directive>
+</div>

@@ -1,7 +1,6 @@
 ﻿body {
     font-family: 'Segoe UI', sans-serif;
     background-color: floralwhite;
-    color: #fff;
     position: relative;
     overflow-x: hidden;
     padding-top: 60px;
@@ -20,6 +19,7 @@ html {
     padding-left: 45px;
     position: fixed;
     top: 0;
+    z-index: 1;
 }
 
 .header__text {
@@ -27,6 +27,7 @@ html {
     float: left;
     line-height: 60px;
     margin-left: 15px;
+    color: #fff;
 }
 
 .header__userContainer {
@@ -56,6 +57,7 @@ html {
 
 .pageContainer {
     height: 100%;
+    padding: 15px;
 }
 
 .sidebar-wrapper {
@@ -80,10 +82,6 @@ html {
         display: none;
     }
 
-#page-content-wrapper {
-    width: 100%;
-    padding-top: 70px;
-}
 
 /*-------------------------------*/
 /*     Sidebar nav styles        */
@@ -197,12 +195,13 @@ html {
 
 .hamburger {
     position: fixed;
-    top: 9px;
+    top: 14px;
     width: 32px;
     height: 32px;
     margin-left: 15px;
     background: transparent;
     border: none;
+    z-index: 2;
 }
 
     .hamburger:hover,
@@ -322,4 +321,34 @@ html {
 
 .pointered {
     cursor: pointer;
+}
+
+.pagination > li > a.active {
+    background-color: aqua;
+}
+
+.thSortable {
+    display: table;
+}
+
+.thSortable__label {
+    display: table-cell;
+    vertical-align: middle;
+    padding-right: 6px;
+    text-align: center;
+}
+
+.thSortable__icon {
+    display: table-cell;
+    font-size: 10px;
+    width: 1%;
+    color: #ccc;
+}
+
+.thSortable__icon--active {
+    color: #333;
+}
+
+.table__header > th {
+    background-color: #eee;
 }
