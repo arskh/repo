@@ -260,5 +260,5 @@ paket-files/
 __pycache__/
 *.pyc
 
-Solution1/TypeScriptHTMLApp1/app/**/*.js
-Solution1/TypeScriptHTMLApp1/app/**/*.map
+Solution1/Feladat/app/**/*.js
+Solution1/Feladat/app/**/*.map
