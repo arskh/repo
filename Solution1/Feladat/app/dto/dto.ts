@@ -36,6 +36,7 @@
         description: string;
 
         iconClass: string;
+        isSelected: boolean;
 
         constructor(data?: UserDto) {
             data = data || {} as UserDto;
@@ -48,6 +49,7 @@
             this.description = data.description || "";
 
             this.iconClass = data.iconClass || "";
+            this.isSelected = angular.isDefined(data.isSelected) ? data.isSelected : false;
         }
     }
 

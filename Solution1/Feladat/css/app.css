@@ -419,6 +419,10 @@ tr > td {
         border-bottom: none;
     }
 
+tbody > tr.tr--selected {
+    background-color: #7C3446 !important;
+}
+
 .pagination > li > a {
     background-color: #323C50;
     border: 1px solid #2C3446;
@@ -466,7 +470,7 @@ select.form-control {
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
-.form-control {
+.userForm .form-control {
     height: auto !important;
     padding: 8px 12px !important;
 }
@@ -500,7 +504,7 @@ span.input-group-addon i {
     text-align: center;
 }
 
-textarea {
+.userForm textarea {
     resize: none;
 }
 
@@ -535,23 +539,33 @@ textarea {
 
 .saveButton {
     background-color: #4DC3FA;
+}
+
+.userForm .saveButton {
     width: 100%;
 }
 
-    .saveButton:hover {
-        background-color: #FFF842;
-        border-color: #FFF842;
-        color: #403E10;
-        font-weight: bold;
-        box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
-        transform: translate3d(6px, -6px, 0);
-        transition-delay: 0;
-        transition-duration: 0.4s;
-        transition-property: all;
-    }
+.saveButton:hover {
+    background-color: #FFF842;
+    border-color: #FFF842;
+    color: #403E10;
+    font-weight: bold;
+    box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+    transform: translate3d(6px, -6px, 0);
+    transition-delay: 0;
+    transition-duration: 0.4s;
+    transition-property: all;
+}
 
 .welcomeText {
     font-size: 36px;
     color: white;
     text-align: center;
+}
+
+.counterLabel {
+    background-color: #2C3446;
+    color: #4DC3FA;
+    font-weight: bold;
+    vertical-align: middle;
 }

@@ -4,13 +4,24 @@
         pagerConfig: PagerConfigDto;
         indexes: Array<number>;
 
-        static $inject = ["UserService"];
+        static $inject = ["UserService", "$scope"];
 
         constructor(
-            private userService: UserService
+            private userService: UserService,
+            private $scope: ng.IScope
         ) {
             this.pagerConfig = userService.searchDto.pagerConfig;
             this.fillIndexes();
+
+            var searchedEvent = this.$scope.$on("searched", () => {
+                this.fillIndexes();
+            });
+
+            this.$scope.$on("$destroy", () => {
+                if (searchedEvent) {
+                    searchedEvent();
+                }
+            });
         }
 
         fillIndexes() {

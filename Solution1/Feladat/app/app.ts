@@ -7,7 +7,7 @@
         }
     }
 
-    angular.module("app", ["ngRoute"]);
+    angular.module("app", ["ngRoute", "ui.bootstrap"]);
 
     var initInjector = angular.injector(["ng"]);
     const $http = initInjector.get("$http");
@@ -17,6 +17,7 @@
         .directive("headerDirective", headerDirective)
         .directive("menuDirective", menuDirective)
         .directive("pagerDirective", pagerDirective)
+        .directive("singleClickDirective", ['$parse', singleClickDirective])
         .controller("MainController", MainController);
 
     angular.module("app").config(['$routeProvider', ($routeProvider) => {

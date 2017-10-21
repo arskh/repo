@@ -1,4 +1,24 @@
 ﻿<div class="row">
+    <div class="col-xs-12 col-md-4">
+        <span class="counterLabel">
+            Felhasználók száma: {{uCtrl.userService.searchDto.pagerConfig.totalItems}}
+        </span>
+        <button class="btn btn-xs saveButton" style="margin-left: 10px;"
+                ng-click="uCtrl.openModal();">
+            Kijelöltek mutatása
+        </button>
+    </div>
+    <div class="col-xs-12 col-md-8">
+        <div class="input-group pull-right" style="max-width: 500px;">
+            <input type="text" ng-model="uCtrl.userService.searchDto.searchText" class="form-control" ng-keypress="uCtrl.keyPressed($event);" />
+            <span class="input-group-addon pointered" ng-click="uCtrl.searchBySearchText();">
+                <span class="glyphicon glyphicon-search"></span>
+            </span>
+            <span class="input-group-addon pointered" ng-click="uCtrl.clearSearch();">
+                <span class="glyphicon glyphicon-remove"></span>
+            </span>
+        </div>
+    </div>
     <div class="col-xs-12">
         <table class="table">
             <thead>
@@ -55,7 +75,9 @@
             </thead>
             <tbody>
                 <tr ng-repeat="user in uCtrl.userList"
-                    ng-dblclick="uCtrl.editUser(user);">
+                    ng-dblclick="uCtrl.editUser(user);"
+                    single-click-directive="uCtrl.selectUser(user);"
+                    ng-class="{'tr--selected':user.isSelected}">
                     <td ng-bind="::user.userName"></td>
                     <td ng-bind="::user.email"></td>
                     <td class="text-center"><img class="flag {{::user.iconClass}}" /></td>

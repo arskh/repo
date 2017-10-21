@@ -14,7 +14,7 @@
             this.userList = [];
 
             this.fillUserList().then(() => {
-                
+
             });
         }
 
@@ -25,7 +25,7 @@
             }
 
             var defer = this.$q.defer();
-            
+
             this.$http.get("../data/userList.json").then((response: ng.IHttpResponse<Array<UserDto>>) => {
                 this.userList = response.data.map((item: UserDto) => {
                     return new UserDto(item);
@@ -39,14 +39,30 @@
         }
 
         getUserListBySearchDto(): Array<UserDto> {
-            let filteredUserList = JSON.parse(JSON.stringify(this.userList));
-            filteredUserList = this.$filter("orderBy")(this.userList, this.searchDto.orderBy, !this.searchDto.orderDirection);
-            
+            const filteredList = this.getPagedUserList(this.orderUserList());
+            return filteredList;
+        }
+
+        private filterUserList(): Array<UserDto> {
+            if (!this.searchDto.searchText) {
+                this.searchDto.pagerConfig.totalItems = this.userList.length;
+                return this.userList;
+            }
+            let filteredUserList = this.$filter("filter")(this.userList, this.searchDto.searchText);
+            this.searchDto.pagerConfig.totalItems = filteredUserList.length;
+            return filteredUserList;
+        }
+
+        private orderUserList(): Array<UserDto> {
+            return this.$filter("orderBy")(this.filterUserList(), this.searchDto.orderBy, !this.searchDto.orderDirection);
+        }
+
+        private getPagedUserList(orderedFilteredUserList: Array<UserDto>): Array<UserDto> {
             let i = this.searchDto.pagerConfig.pageIndex * this.searchDto.pagerConfig.pageSize, userList: Array<UserDto> = [];
             const length = (this.searchDto.pagerConfig.pageIndex + 1) * this.searchDto.pagerConfig.pageSize;
             for (i; i < length; i++) {
-                if (i > filteredUserList.length - 1) break;
-                userList.push(filteredUserList[i]);
+                if (i > orderedFilteredUserList.length - 1) break;
+                userList.push(orderedFilteredUserList[i]);
             }
             return userList;
         }
@@ -73,7 +89,7 @@
 
                 userDto.id = maxId;
                 this.userList.push(userDto);
-            }            
+            }
         }
     }
 }

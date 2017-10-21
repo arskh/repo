@@ -56,6 +56,7 @@
     <TypeScriptSourceRoot />
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="app\admin\modal.html" />
     <Content Include="app\admin\user.html" />
     <Content Include="app\admin\userList.html" />
     <Content Include="app\directives\header\header.html" />
@@ -73,6 +74,8 @@
     <Content Include="scripts\jquery-3.2.1.js" />
     <Content Include="scripts\popper.js" />
     <Content Include="package.json" />
+    <Content Include="scripts\ui-bootstrap-2.5.0.js" />
+    <Content Include="scripts\ui-bootstrap-tpls-2.5.0.js" />
     <Content Include="tsconfig.json" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -95,10 +98,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="app\admin\modal.ctrl.ts" />
     <TypeScriptCompile Include="app\admin\user.ctrl.ts" />
     <TypeScriptCompile Include="app\admin\user.service.ts" />
     <TypeScriptCompile Include="app\admin\userList.ctrl.ts" />
     <TypeScriptCompile Include="app\app.ts" />
+    <TypeScriptCompile Include="app\directives\common\common.directives.ts" />
     <TypeScriptCompile Include="app\directives\pager\pager.directive.ctrl.ts" />
     <TypeScriptCompile Include="app\directives\pager\pager.directive.ts" />
     <TypeScriptCompile Include="app\dto\dto.ts" />
