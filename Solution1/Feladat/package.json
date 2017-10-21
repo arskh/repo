@@ -3,9 +3,9 @@
     "name": "feladat",
     "private": true,
     "devDependencies": {
-        "@types/angular": "^1.6.34"
+        "@types/angular": "1.6.34"
     },
     "dependencies": {
-        "@types/angular": "^1.6.34"
+        "@types/angular": "1.6.34"
     }
 }

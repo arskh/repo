@@ -1,0 +1,42 @@
+﻿<div>
+    <button type="button"
+            class="hamburger"
+            ng-class="{'is-closed':!menuCtrl.menuVisible, 'is-open':menuCtrl.menuVisible}"
+            data-toggle="offcanvas"
+            ng-click="menuCtrl.toggleMenu();">
+        <span class="hamb-top"></span>
+        <span class="hamb-middle"></span>
+        <span class="hamb-bottom"></span>
+    </button>
+    <!-- Sidebar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top sidebar-wrapper"
+         role="navigation"
+         ng-class="{ 'toggled' : menuCtrl.menuVisible }">
+        <ul class="nav sidebar-nav">
+            <li ng-repeat="menuGroup in menuCtrl.menus"
+                ng-class="{'dropdown': menuGroup.items.length > 0, 'active': menuGroup.isActive}"
+                ng-switch="menuGroup.items.length > 0"
+                ng-click="menuCtrl.menuItemClicked(menuGroup);">
+                <a ng-switch-when="false"
+                   href="{{::menuGroup.url}}"
+                   ng-bind="::menuGroup.name"></a>
+                <a ng-switch-when="true"
+                   class="dropdown-toggle" 
+                   data-toggle="dropdown"
+                   style="cursor: pointer;"
+                   ng-click="menuCtrl.menuItemClicked(menuGroup);">
+                    <span ng-bind="::menuGroup.name"></span>
+                    <span class="glyphicon"
+                          ng-class="{'glyphicon-menu-down' : !menuGroup.isActive, 'glyphicon-menu-up' : menuGroup.isActive}"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu" ng-switch-when="true">
+                    <li ng-repeat="menu in menuGroup.items">
+                        <a href="{{::menu.url}}"
+                           ng-bind="::menu.name"
+                           ng-click="menuCtrl.menuItemClicked(menu);"></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>

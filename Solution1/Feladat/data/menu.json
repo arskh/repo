@@ -1,0 +1,31 @@
+﻿{
+    "data": [
+        {
+            "url": "#!/Home",
+            "name": "Kezdőlap",
+            "iconClass": "glyphicon-home"
+        },
+        {
+            "name": "Admin",
+            "url": "",
+            "iconClass": "glyphicon-user",
+            "items": [
+                {
+                    "name": "Felhasználó lista",
+                    "url": "#!/Users",
+                    "iconClass": "glyphicon-list"
+                },
+                {
+                    "name": "Felhasználó rögzítés",
+                    "url": "#!/Users/add",
+                    "iconClass": "glyphicon-edit"
+                }
+            ]
+        },
+        {
+            "url": "#!/Book/1",
+            "name": "Könyvek",
+            "iconClass": "glyphicon-book"
+        }
+    ]
+}

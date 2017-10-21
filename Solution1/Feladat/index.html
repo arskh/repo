@@ -1,57 +1,62 @@
 ﻿<!DOCTYPE html>
 
 <html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
-      ng-app="app"
-      ng-strict-di>
+      xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <title>Admin</title>
-    
+
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
     <!-- Saját -->
     <link href="css/app.css" rel="stylesheet" />
 </head>
-<body ng-controller="Controller1 as ctrl">
+<body>
     <div class="pageContainer">
-        <div class="header">
-            <div class="headerMenuIcon" ng-click="ctrl.menuClicked();">
-                <span class="glyphicon glyphicon-menu-hamburger"></span>
-            </div>
-            <div class="headerText">
-                {{ctrl.hello}}
-            </div>
-            <div class="headerUserContainer">
-                <span>
-                    Felhasználó neve
-                </span>
-                <span class="glyphicon glyphicon-menu-down"></span>
-            </div>
-        </div>
-        <div class="menu animate-if"
-             ng-if="ctrl.menuVisible">
-            <div class="menu__item">
-                Menü1
-            </div>
-            <div class="menu__item">
-                Menü2
-            </div>
-            <div class="menu__item">
-                Menü3
-            </div>
-            <div class="menu__item">
-                Menü4
+        <header-directive></header-directive>
+        <menu-directive></menu-directive>
+        <div id="page-content-wrapper">
+            <div class="container">
+                <ng-view></ng-view>
             </div>
         </div>
     </div>
+
+
+    <!--<div  ng-controller="MainController as ctrl"
+         ng-class="{'toggled' : ctrl.visible}">
+
+
+        <menu-directive></menu-directive>
+        <div id="page-content-wrapper">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h1>Fancy Toggle Sidebar Navigation</h1>
+                        <p>Bacon ipsum dolor sit amet tri-tip shoulder tenderloin shankle. Bresaola tail pancetta ball tip doner meatloaf corned beef. Kevin pastrami tri-tip prosciutto ham hock pork belly bacon pork loin salami pork chop shank corned beef tenderloin meatball cow. Pork bresaola meatloaf tongue, landjaeger tail andouille strip steak tenderloin sausage chicken tri-tip. Pastrami tri-tip kielbasa sausage porchetta pig sirloin boudin rump meatball andouille chuck tenderloin biltong shank </p>
+                        <p>Pig meatloaf bresaola, spare ribs venison short loin rump pork loin drumstick jowl meatball brisket. Landjaeger chicken fatback pork loin doner sirloin cow short ribs hamburger shoulder salami pastrami. Pork swine beef ribs t-bone flank filet mignon, ground round tongue. Tri-tip cow turducken shank beef shoulder bresaola tongue flank leberkas ball tip.</p>
+                        <p>Filet mignon brisket pancetta fatback short ribs short loin prosciutto jowl turducken biltong kevin pork chop pork beef ribs bresaola. Tongue beef ribs pastrami boudin. Chicken bresaola kielbasa strip steak biltong. Corned beef pork loin cow pig short ribs boudin bacon pork belly chicken andouille. Filet mignon flank turkey tongue. Turkey ball tip kielbasa pastrami flank tri-tip t-bone kevin landjaeger capicola tail fatback pork loin beef jerky.</p>
+                        <p>Chicken ham hock shankle, strip steak ground round meatball pork belly jowl pancetta sausage spare ribs. Pork loin cow salami pork belly. Tri-tip pork loin sausage jerky prosciutto t-bone bresaola frankfurter sirloin pork chop ribeye corned beef chuck. Short loin hamburger tenderloin, landjaeger venison porchetta strip steak turducken pancetta beef cow leberkas sausage beef ribs. Shoulder ham jerky kielbasa. Pig doner short loin pork chop. Short ribs frankfurter rump meatloaf.</p>
+                        <p>Filet mignon biltong chuck pork belly, corned beef ground round ribeye short loin rump swine. Hamburger drumstick turkey, shank rump biltong pork loin jowl sausage chicken. Rump pork belly fatback ball tip swine doner pig. Salami jerky cow, boudin pork chop sausage tongue andouille turkey.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
     <!-- Libek -->
     <script src="scripts/angular.js"></script>
+    <script src="scripts/angular-route.js"></script>
     <script src="scripts/angular-animate.js"></script>
     <script src="scripts/jquery-3.2.1.js"></script>
     <script src="scripts/popper.js"></script>
     <script src="scripts/bootstrap.js"></script>
 
-
+    <script src="app/dto/dto.js"></script>
+    <script src="app/directives/header/header.directive.ctrl.js"></script>
+    <script src="app/directives/header/header.directive.js"></script>
+    <script src="app/directives/menu/menu.directive.ctrl.js"></script>
+    <script src="app/directives/menu/menu.directive.js"></script>
+    <script src="app/home/home.ctrl.js"></script>
     <script src="app/file1.js"></script>
     <script src="app/app.js"></script>
 </body>

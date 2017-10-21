@@ -1,19 +1,19 @@
 ﻿module app {
-    export class Controller1 {
-        hello: string;
-        menuVisible: boolean;
-
-        static $inject = [];
-
+    export class MainController {
+        
         constructor(
 
         ) {
-            this.hello = "Hello szia szevasz működök bazze";
-            this.menuVisible = false;
         }
+    }
 
-        menuClicked() {
-            this.menuVisible = !this.menuVisible;
+    export class Controller2 {
+        static $inject = [];
+
+        hello: string;
+
+        constructor() {
+            this.hello = "ASDASDASD";
         }
     }
 }
