@@ -12,9 +12,11 @@
 </head>
 <body>
     <header-directive></header-directive>
-    <menu-directive></menu-directive>
-    <div class="pageContainer">
-        <div ng-view></div>
+    <div ng-controller="MainController as mCtrl">
+        <menu-directive menu-visible="mCtrl.menu"></menu-directive>
+        <div class="pageContainer" ng-class="{'toggled':mCtrl.menu.value}">
+            <div ng-view></div>
+        </div>
     </div>
 
     <!-- Libek -->

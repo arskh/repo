@@ -1,7 +1,7 @@
 ﻿module app {
     export class MenuDirectiveController {
         menus: Array<MenuGroupDto>;
-        menuVisible: boolean;
+        menuVisible: { value: boolean };
 
         static $inject = ["$http"];
 
@@ -9,8 +9,7 @@
             private $http: ng.IHttpService
         ) {
             this.menus = [];
-            this.menuVisible = false;
-
+            
             this.$http.get("../data/menu.json").then((data: ng.IHttpResponse<Array<MenuGroupDto>>) => {
                 data.data.map((item: MenuGroupDto) => {
                     this.menus.push(new MenuGroupDto(item));
@@ -29,7 +28,7 @@
         }
 
         toggleMenu() {
-            this.menuVisible = !this.menuVisible;
+            this.menuVisible.value = !this.menuVisible.value;
         }
     }
 }

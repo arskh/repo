@@ -1,4 +1,12 @@
 ﻿module app {
+    export class MainController {
+        menu: { value: boolean };
+
+        constructor() {
+            this.menu = { value: true };
+        }
+    }
+
     angular.module("app", ["ngRoute"]);
 
     var initInjector = angular.injector(["ng"]);
@@ -8,7 +16,8 @@
         .service("UserService", UserService)
         .directive("headerDirective", headerDirective)
         .directive("menuDirective", menuDirective)
-        .directive("pagerDirective", pagerDirective);
+        .directive("pagerDirective", pagerDirective)
+        .controller("MainController", MainController);
 
     angular.module("app").config(['$routeProvider', ($routeProvider) => {
         $routeProvider
@@ -36,5 +45,5 @@
         angular.element(document).ready(function () {
             angular.bootstrap(document, ["app"]);
         });
-    });
+    });    
 }

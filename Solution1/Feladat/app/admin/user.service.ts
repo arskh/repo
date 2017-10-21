@@ -20,6 +20,7 @@
 
         fillUserList(): ng.IPromise<any> {
             if (this.userList.length > 0) {
+                this.searchDto.pagerConfig.totalItems = this.userList.length;
                 return this.$q.when();
             }
 

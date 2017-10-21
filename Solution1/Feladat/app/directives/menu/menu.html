@@ -1,8 +1,7 @@
 ﻿<div>
     <button type="button"
             class="hamburger"
-            ng-class="{'is-closed':!menuCtrl.menuVisible, 'is-open':menuCtrl.menuVisible}"
-            data-toggle="offcanvas"
+            ng-class="{'is-closed':!menuCtrl.menuVisible.value, 'is-open':menuCtrl.menuVisible.value}"
             ng-click="menuCtrl.toggleMenu();">
         <span class="hamb-top"></span>
         <span class="hamb-middle"></span>
@@ -11,7 +10,7 @@
     <!-- Sidebar -->
     <nav class="navbar navbar-inverse navbar-fixed-top sidebar-wrapper"
          role="navigation"
-         ng-class="{ 'toggled' : menuCtrl.menuVisible }">
+         ng-class="{ 'toggled' : menuCtrl.menuVisible.value }">
         <ul class="nav sidebar-nav">
             <li ng-repeat="menuGroup in menuCtrl.menus"
                 ng-class="{'dropdown': menuGroup.items.length > 0, 'active': menuGroup.isActive}"
