@@ -25,7 +25,12 @@
             })
     }])
 
-    angular.element(document).ready(function () {
-        angular.bootstrap(document, ["app"]);
+    $http.get("../data/user.json").then((response: ng.IHttpResponse<ResponseDataType<UserDto>>) => {
+        angular.module("app").constant("user", response.data.data);
+    }).then(() => {
+
+        angular.element(document).ready(function () {
+            angular.bootstrap(document, ["app"]);
+        });
     });
 }

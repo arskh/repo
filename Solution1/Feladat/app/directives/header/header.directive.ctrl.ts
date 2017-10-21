@@ -1,6 +1,10 @@
 ﻿module app {
     export class HeaderDirectiveController {
-constructor(){
-}
-}
+        static $inject = ["user"];
+
+        constructor(
+            private user: UserDto
+        ) {
+        }
+    }
 }

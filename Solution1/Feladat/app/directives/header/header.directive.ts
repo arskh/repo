@@ -3,7 +3,8 @@
         return {
             replace: true,
             templateUrl: "app/directives/header/header.html",
-            controller: HeaderDirectiveController
+            controller: HeaderDirectiveController,
+            controllerAs: "headerCtrl"
         } as ng.IDirective;
     }
 }

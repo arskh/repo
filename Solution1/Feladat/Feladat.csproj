@@ -58,6 +58,7 @@
   <ItemGroup>
     <Content Include="app\directives\header\header.html" />
     <Content Include="app\directives\menu\menu.html" />
+    <Content Include="content\profilepicture.png" />
     <Content Include="css\app.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="scripts\angular-animate.js" />
@@ -74,6 +75,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="data\menu.json" />
+    <Content Include="data\user.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

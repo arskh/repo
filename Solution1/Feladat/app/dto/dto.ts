@@ -26,7 +26,11 @@
             }) : [];
         }
     }
-    
+
+    export class UserDto {
+        userName: string;
+        picturePath: string;
+    }
 
     export interface ResponseDataType<T>{
         data: T;

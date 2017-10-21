@@ -1,11 +1,27 @@
 ﻿<div class="header">
-    <div class="headerText">
+    <div class="header__text">
         Alkalmazás neve
     </div>
-    <div class="headerUserContainer">
-        <span>
-            Felhasználó neve
-        </span>
-        <span class="glyphicon glyphicon-menu-down"></span>
+    <div class="header__userContainer dropdown pointered"
+         id="dropdownMenu1">
+        <div class="dropdown-toggle"
+             style="padding: 5px;"
+             data-toggle="dropdown"
+             aria-haspopup="true"
+             aria-expanded="true">
+            <img ng-src="{{headerCtrl.user.picturePath}}"
+                 class="header__userContainer__image" />
+            <span ng-bind="headerCtrl.user.userName"></span>
+            <span class="glyphicon glyphicon-menu-down"></span>
+        </div>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li>
+                <a href="#!/Logout">Kijelentkezés</a>
+            </li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+        </ul>
     </div>
 </div>
