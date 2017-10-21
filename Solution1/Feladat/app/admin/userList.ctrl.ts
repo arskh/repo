@@ -2,10 +2,11 @@
     export class UserListController {
         userList: Array<UserDto>;
 
-        static $inject = ["UserService"];
+        static $inject = ["UserService", "$location"];
 
         constructor(
-            private userService: UserService
+            private userService: UserService,
+            private $location: ng.ILocationService
         ) {
             this.userService.searchDto = new UserSearchDto();
             this.userList = [];
@@ -17,7 +18,6 @@
 
         search() {
             this.userList = this.userService.getUserListBySearchDto();
-            var asd = "qwe";
         }
 
         order(orderBy: string) {
@@ -29,6 +29,10 @@
             }
 
             this.search();
+        }
+
+        editUser(user: UserDto) {
+            this.$location.path("/Users/" + user.id);
         }
     }
 }

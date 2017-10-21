@@ -82,4 +82,18 @@
     export interface ResponseDataType<T> {
         data: T;
     }
+
+    export class CountryDto {
+        name: string;
+        id: number;
+        className: string;
+
+        constructor(d?: CountryDto) {
+            d = d || {} as CountryDto;
+
+            this.name = d.name || "";
+            this.id = d.id || null;
+            this.className = d.className || "";
+        }
+    }
 }

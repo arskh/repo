@@ -1,0 +1,17 @@
+﻿[
+    {
+        "name": "Magyarország",
+        "id": 1,
+        "className": "flag--hu"
+    },
+    {
+        "name": "Németország",
+        "id": 2,
+        "className": "flag--de"
+    },
+    {
+        "name": "Olaszország",
+        "id": 3,
+        "className": "flag--it"
+    }
+]

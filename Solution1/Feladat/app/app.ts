@@ -8,9 +8,7 @@
         .service("UserService", UserService)
         .directive("headerDirective", headerDirective)
         .directive("menuDirective", menuDirective)
-        .directive("pagerDirective", pagerDirective)
-        .controller("MainController", MainController)
-        .controller("Controller2", Controller2);
+        .directive("pagerDirective", pagerDirective);
 
     angular.module("app").config(['$routeProvider', ($routeProvider) => {
         $routeProvider
@@ -18,6 +16,11 @@
                 templateUrl: "app/admin/userList.html",
                 controller: UserListController,
                 controllerAs: "uCtrl"
+            })
+            .when("/Users/:id", {
+                templateUrl: "app/admin/user.html",
+                controller: EditUserCtrl,
+                controllerAs: "editUCtrl"
             })
             .otherwise("/Home", {
                 templateUrl: "app/home/home.html",

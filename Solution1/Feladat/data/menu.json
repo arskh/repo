@@ -16,14 +16,9 @@
             },
             {
                 "name": "Felhasználó rögzítés",
-                "url": "#!/Users/add",
+                "url": "#!/Users/0",
                 "iconClass": "glyphicon-edit"
             }
         ]
-    },
-    {
-        "url": "#!/Book/1",
-        "name": "Könyvek",
-        "iconClass": "glyphicon-book"
     }
 ]

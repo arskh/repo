@@ -56,10 +56,12 @@
     <TypeScriptSourceRoot />
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="app\admin\user.html" />
     <Content Include="app\admin\userList.html" />
     <Content Include="app\directives\header\header.html" />
     <Content Include="app\directives\menu\menu.html" />
     <Content Include="app\directives\pager\pager.directive.html" />
+    <Content Include="content\flagssprite_small.png" />
     <Content Include="content\profilepicture.png" />
     <Content Include="css\app.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -79,6 +81,7 @@
     <Content Include="data\menu.json" />
     <Content Include="data\user.json" />
     <Content Include="data\userList.json" />
+    <Content Include="data\countries.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -92,13 +95,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="app\admin\user.ctrl.ts" />
     <TypeScriptCompile Include="app\admin\user.service.ts" />
     <TypeScriptCompile Include="app\admin\userList.ctrl.ts" />
     <TypeScriptCompile Include="app\app.ts" />
     <TypeScriptCompile Include="app\directives\pager\pager.directive.ctrl.ts" />
     <TypeScriptCompile Include="app\directives\pager\pager.directive.ts" />
     <TypeScriptCompile Include="app\dto\dto.ts" />
-    <TypeScriptCompile Include="app\file1.ts" />
     <TypeScriptCompile Include="app\home\home.ctrl.ts" />
     <TypeScriptCompile Include="app\directives\header\header.directive.ctrl.ts" />
     <TypeScriptCompile Include="app\directives\header\header.directive.ts" />
