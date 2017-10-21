@@ -31,11 +31,13 @@
                 controller: EditUserCtrl,
                 controllerAs: "editUCtrl"
             })
-            .otherwise("/Home", {
+            .when("/Home", {
                 templateUrl: "app/home/home.html",
                 controller: HomeController,
                 controllerAs: "homeCtrl"
-            })
+            }).otherwise({
+                redirectTo: '/Home'
+            });
     }])
 
     $http.get("../data/user.json").then((response: ng.IHttpResponse<ResponseDataType<UserDto>>) => {
@@ -45,5 +47,5 @@
         angular.element(document).ready(function () {
             angular.bootstrap(document, ["app"]);
         });
-    });    
+    });
 }

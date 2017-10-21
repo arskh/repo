@@ -12,7 +12,7 @@
             this.userList = [];
 
             this.userService.fillUserList().then(() => {
-                this.userList = this.userService.getUserListBySearchDto();
+                this.search();
             });
         }
 

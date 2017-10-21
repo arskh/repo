@@ -20,5 +20,25 @@
                 "iconClass": "glyphicon-edit"
             }
         ]
+    },
+    {
+        "url": "#!/Home",
+        "name": "Menüpont 1",
+        "iconClass": "glyphicon-home"
+    },
+    {
+        "url": "#!/Home",
+        "name": "Menüpont 2",
+        "iconClass": "glyphicon-home"
+    },
+    {
+        "url": "#!/Home",
+        "name": "Menüpont 3",
+        "iconClass": "glyphicon-home"
+    },
+    {
+        "url": "#!/Home",
+        "name": "Menüpont 4",
+        "iconClass": "glyphicon-home"
     }
 ]

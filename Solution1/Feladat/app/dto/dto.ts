@@ -35,6 +35,8 @@
         countryId: number;
         description: string;
 
+        iconClass: string;
+
         constructor(data?: UserDto) {
             data = data || {} as UserDto;
 
@@ -44,6 +46,8 @@
             this.email = data.email || "";
             this.countryId = data.countryId || null;
             this.description = data.description || "";
+
+            this.iconClass = data.iconClass || "";
         }
     }
 

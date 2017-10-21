@@ -509,13 +509,24 @@ textarea {
     color: red;
 }
 
-.flag--it {
+.flag {
+    padding: 0 !important;
+    margin: 0 5px 0 0;
+    width: 16px;
+    height: 11px;
+    background: url(../content/flagssprite_small.png) no-repeat;
+}
+
+.flag--hu {
+    background-position: -16px -517px;
 }
 
 .flag--de {
+    background-position: -16px -22px;
 }
 
 .flag--it {
+    background-position: -32px -33px;
 }
 
 .pageContainer.toggled {
@@ -538,3 +549,9 @@ textarea {
         transition-duration: 0.4s;
         transition-property: all;
     }
+
+.welcomeText {
+    font-size: 36px;
+    color: white;
+    text-align: center;
+}

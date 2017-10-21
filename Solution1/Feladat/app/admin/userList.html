@@ -58,7 +58,7 @@
                     ng-dblclick="uCtrl.editUser(user);">
                     <td ng-bind="::user.userName"></td>
                     <td ng-bind="::user.email"></td>
-                    <td ng-bind="::user.countryId"></td>
+                    <td class="text-center"><img class="flag {{::user.iconClass}}" /></td>
                     <td ng-bind="::user.description"></td>
                 </tr>
             </tbody>
