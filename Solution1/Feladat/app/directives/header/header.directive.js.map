@@ -1,0 +1,1 @@
+{"version":3,"file":"header.directive.js","sourceRoot":"","sources":["header.directive.ts"],"names":[],"mappings":"AAAA,IAAO,GAAG,CAST;AATD,WAAO,GAAG;IACN;QACI,MAAM,CAAC;YACH,OAAO,EAAE,IAAI;YACb,WAAW,EAAE,mCAAmC;YAChD,UAAU,EAAE,IAAA,yBAAyB;YACrC,YAAY,EAAE,YAAY;SACZ,CAAC;IACvB,CAAC;IAPe,mBAAe,kBAO9B,CAAA;AACL,CAAC,EATM,GAAG,KAAH,GAAG,QAST"}
